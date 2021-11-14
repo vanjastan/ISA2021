@@ -1,0 +1,41 @@
+<div>
+        <h1 style="text-align:center; padding: 1em" >Logging in</h1>
+        <form [formGroup]="loginForm" (submit)="onLogin()">
+        <div >
+            <p style="text-align:center">
+                <mat-form-field appearance="outline" >
+                    <mat-label>Username</mat-label>
+                    <input matInput type="text" placeholder="Username" formControlName="username">
+    
+                    <small id="username-error" class="text-danger"
+                    *ngIf="loginForm.controls.username.touched && loginForm.controls.username.errors?.required">
+                    Username is required
+                </small>
+                </mat-form-field>
+            </p>
+    
+            <p style="text-align:center">
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" formControlName="password">
+    
+                    <small id="password-error" class="text-danger"
+                    *ngIf="loginForm.controls.password.touched && loginForm.controls.password.errors?.required">
+                    Password is required
+                </small>
+                </mat-form-field>
+            </p>
+        </div>
+<div  style="text-align:center" >
+    <button  mat-raised-button style="background-color: darkcyan;" type="submit" [disabled]="loginForm.invalid">Log in</button>
+    
+    </div>
+</form>
+<br>
+<div>
+    <div style="text-align:center">
+        <button  mat-stroked-button style="background-color:white"><a [routerLink]="['register']"><b>Sign up</b></a></button>
+    </div>
+</div>
+</div>
+

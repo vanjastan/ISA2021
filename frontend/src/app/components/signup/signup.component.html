@@ -1,0 +1,69 @@
+<div class="apoteka">
+<h1  style="text-align:center">Signing up</h1>
+<form [formGroup]="registrationForm" (submit)="onRegisterSubmit()">
+<div mat-dialog-content>
+
+    <p style="text-align:center" >
+
+
+        <mat-form-field appearance="outline" style="right:2em">
+                <mat-label>First name</mat-label>
+                <input matInput type="text" placeholder="First name" formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" style="left:2em">
+            <mat-label>Last name</mat-label>
+            <input matInput type="text" placeholder="Last name" formControlName="surname">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" style="left:6em">
+            <mat-label>Phone number</mat-label>
+            <input matInput type="text" placeholder="Phone number" formControlName="phone">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" style="left:10em">
+            <mat-label>Username</mat-label>
+            <input matInput type="text" placeholder="First name" formControlName="username">
+    </mat-form-field>
+
+    </p>
+
+    <p style="text-align:center">
+        <mat-form-field appearance="outline" style="right:2em">
+            <mat-label >Email</mat-label>
+            <input matInput type="email" placeholder="Email" formControlName="email">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" style="left:2em">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" style="left:6em">
+            <mat-label>Repeat password</mat-label>
+            <input matInput type="reppassword">
+        </mat-form-field>
+    </p>
+
+    <p style="text-align:center">
+        <mat-form-field appearance="outline" style="right:2em">
+            <mat-label>Address</mat-label>
+            <input matInput type="text" placeholder="Address" formControlName="address">
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="left:2em">
+            <mat-label>City</mat-label>
+            <input matInput type="text" placeholder="City" formControlName="city">
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="left:6em">
+            <mat-label>Country</mat-label>
+            <input matInput type="text" placeholder="Country" formControlName="country">
+        </mat-form-field>
+    </p>
+
+</div>
+<div  style="text-align:center" >
+  <button style="left:3em" mat-raised-button type="submit" [disabled]="registrationForm.invalid">Sign up</button>
+  
+</div>
+</form>
+</div>

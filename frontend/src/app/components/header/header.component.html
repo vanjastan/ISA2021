@@ -1,0 +1,11 @@
+<mat-toolbar color="blue">  
+   <mat-toolbar-row style="background-color: darkcyan;"> 
+
+      <button mat-button style="position: absolute; right: 0; margin-right: 1cm;"><a style="color: black;" [routerLink]="['login']" *ngIf="!isUserLoggedIn()">Log in </a></button>
+
+      <button mat-button style="position: absolute; right: 0; margin-right: 3cm;"><a style="color: black;" (click)="onClickRegister()" *ngIf="!isUserLoggedIn()">Sign up </a></button>
+
+      <button mat-button style="position: absolute; right: 0; margin-right: 1cm;"><a style="color: black;" (click)="onClickLogout()" *ngIf="isUserLoggedIn()">Log out </a></button>
+  
+   </mat-toolbar-row>
+</mat-toolbar>
