@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
 
   onLogin(): void {
     const credentials: LoginDTO = {
-      username: this.loginForm.value.email,
+      username: this.loginForm.value.username,
       password: this.loginForm.value.password
     };
 
