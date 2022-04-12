@@ -12,6 +12,8 @@ public class JwtAuthenticationRequest {
 
     public JwtAuthenticationRequest(String username, String password) {
         this.setUsername(username);
+        System.out.println("hhh username");
+        System.out.println(username);
         this.setPassword(password);
     }
 

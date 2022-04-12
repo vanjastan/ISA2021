@@ -1,0 +1,26 @@
+<div>
+    <form style="width:600px;">
+      <h2 class="ui header" style="text-align:center">List of cancel request</h2>
+              <table class="ui celled striped table">
+                  <colgroup>
+                      <col span="4" style="background-color:whitesmoke">
+                      <col style="background-color:whitesmoke">
+                  </colgroup>
+                  <thead>
+                      <th>User ID</th>
+                      <th>Reason</th>
+                      <th>Answer</th>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let category of categories">
+                          <td>{{ category.userId}}</td>
+                          <td>{{ category.text }}</td>
+                          <td>
+                            <button mat-raised-button type="button" (click)="onSelect(category, true)">Accept</button>
+                            <button mat-raised-button type="button" style="margin-left: 50px" (click)="onSelect(category, false)" >Deny</button>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </form>
+          </div>

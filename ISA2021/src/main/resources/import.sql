@@ -6,3 +6,8 @@ INSERT INTO `users` (user_type, id, name, surname, username, address, city, coun
 
 INSERT INTO `user_authority` (user_id, authority_id) VALUES (1, 1);
 INSERT INTO `user_authority` (user_id, authority_id) VALUES (2, 2);
+
+INSERT INTO `boats` (id, name, address, description, grade, price) VALUES (1, 'Boat1', 'Zmaj Ognjena Vuka 12', 'Opis1', 5, 14000);
+INSERT INTO `boats` (id, name, address, description, grade, price) VALUES (2, 'ABoat1', 'AZmaj Ognjena Vuka 12', 'Opis1', 10, 28000);
+
+INSERT INTO `cancel_requests` (id, user_id, text, accepted) VALUES (1, 2, 'Moj neki razlog', false);

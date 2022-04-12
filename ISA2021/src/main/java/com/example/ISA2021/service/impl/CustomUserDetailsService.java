@@ -95,7 +95,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
 		// Create token
 		User user = (User) authentication.getPrincipal();
-		String jwt = tokenUtils.generateToken(user.getEmail());
+		String jwt = tokenUtils.generateToken(user.getUsername());
 		int expiresIn = tokenUtils.getExpiredIn();
 
 		UserDTO userDto = new UserDTO(user);

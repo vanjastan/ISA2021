@@ -2,10 +2,12 @@ package com.example.ISA2021.service.impl;
 
 import com.example.ISA2021.common.TimeProvider;
 import com.example.ISA2021.config.consts.UserRoles;
+import com.example.ISA2021.dto.UserDTO;
 import com.example.ISA2021.dto.UserRegistrationDTO;
 import com.example.ISA2021.exception.ApiRequestException;
 import com.example.ISA2021.exception.ResourceNotFoundException;
 import com.example.ISA2021.mappers.UserMapper;
+import com.example.ISA2021.model.CancelRequest;
 import com.example.ISA2021.model.ConfirmationToken;
 import com.example.ISA2021.model.User;
 import com.example.ISA2021.repository.AuthorityRepository;
@@ -120,6 +122,20 @@ public class UserServiceImpl implements UserService {
 			user.setEnabled(true);
 		}
 		userRepository.save(user);
+	}
+
+	@Override
+	public User editUser(UserDTO user) {
+		User userInfo = findById(user.getId());
+		userInfo.setName(user.getName());
+		userInfo.setSurname(user.getSurname());
+		userInfo.setUsername(user.getUsername());
+		userInfo.setCountry(user.getCountry());
+		userInfo.setCity(user.getCity());
+		userInfo.setAddress(user.getAddress());
+		userInfo.setNumber(user.getNumber());
+		userInfo = save(userInfo);
+		return userInfo;
 	}
 
 	@Override

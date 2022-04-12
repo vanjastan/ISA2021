@@ -41,8 +41,7 @@ export class LoginComponent implements OnInit {
       password: this.loginForm.value.password
     };
 
-    this.authService.login(credentials).subscribe(
-      {next: (data) => {
+    this.authService.login(credentials).subscribe(data => {
       localStorage.setItem(USER_ID_KEY, data.id),
       localStorage.setItem(USER_ROLE_KEY, data.authorities[0]),
       localStorage.setItem(USERNAME_KEY, data.username),
@@ -50,12 +49,13 @@ export class LoginComponent implements OnInit {
 
       this.loginSuccess = true;
       this.loginError = false;
+      console.log(data.id);
 
       switch (data.authorities[0]) {
         case ROLE_ADMIN:  this.router.navigate([ADMIN_HOME_PATH]); break;
         case ROLE_CLIENT: this.router.navigate([CLIENT_HOME_PATH]); break;
       }
     }
-  });
+  );
 }
 }

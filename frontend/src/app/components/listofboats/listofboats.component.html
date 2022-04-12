@@ -1,0 +1,27 @@
+<div>
+<form style="width:600px;">
+  <h2 class="ui header" style="text-align:center">List of boats</h2>
+          <table class="ui celled striped table" matSort (matSortChange)="sortData($event)">
+              <colgroup>
+                  <col span="4" style="background-color:whitesmoke">
+                  <col style="background-color:whitesmoke">
+              </colgroup>
+              <thead>
+                  <th mat-sort-header="name">Name</th>
+                  <th mat-sort-header="address">Address</th>
+                  <th>Description</th>
+                  <th mat-sort-header="grade">Grade</th>
+                  <th mat-sort-header="price">Price</th>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let category of sortedBoats">
+                      <td>{{ category.name }}</td>
+                      <td>{{ category.address }}</td>
+                      <td>{{ category.description }}</td>
+                      <td>{{ category.grade }}</td>
+                      <td>{{ category.price }}</td>
+                  </tr>
+              </tbody>
+          </table>
+      </form>
+      </div>

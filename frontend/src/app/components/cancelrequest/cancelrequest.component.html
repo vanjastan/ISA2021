@@ -1,0 +1,12 @@
+<div class="container">
+    <h1>Delete account request</h1>
+        <div class="user-info-container-row">
+            <h3>Write reason for deleting account</h3>
+            <form (ngSubmit)="onSubmitCancelRequest()">
+            <mat-form-field class="input-field" style="width: 500px" appearance="outline" matTooltip="Text">
+                <textarea style="height: 150px" matInput type="text" id="text" name="Text" [(ngModel)]="cancelRequest.text"></textarea>
+            </mat-form-field>
+            <button mat-raised-button style="background-color: darkcyan;" matTooltip="Send request" type="submit">Send request</button>
+            </form>
+        </div>
+</div>
